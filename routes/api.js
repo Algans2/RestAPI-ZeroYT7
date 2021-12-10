@@ -433,7 +433,133 @@ axios.get('https://jadwalnonton.com/now-playing')
      })
   })
 })
-
+// cecan
+router.get('/cecan/china', async (req, res, next) => {
+          var apikey = req.query.apikey
+       	if(!apikey) return res.sendFile(__path + '/docs/403.html')
+        if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/china.json`))
+        .then(response => response.json())
+        .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+          data = await fetch(buffer).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/chika.jpg', data)
+        res.sendFile(__path+'/tmp/chika.jpg')
+         })
+         .catch(e => {
+         	console.log(e);
+         	res.sendFile(__path + '/docs/503.html')
+})
+} else {
+  res.sendFile(__path + '/docs/403.html')
+}
+})
+router.get('/cecan/vietnam', async (req, res, next) => {
+          var apikey = req.query.apikey
+       	if(!apikey) return res.sendFile(__path + '/docs/403.html')
+        if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/vietnam.json`))
+        .then(response => response.json())
+        .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+          data = await fetch(buffer).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/chika.jpg', data)
+        res.sendFile(__path+'/tmp/chika.jpg')
+         })
+         .catch(e => {
+         	console.log(e);
+         	res.sendFile(__path + '/docs/503.html')
+})
+} else {
+  res.sendFile(__path + '/docs/403.html')
+}
+})
+router.get('/cecan/thailand', async (req, res, next) => {
+          var apikey = req.query.apikey
+       	if(!apikey) return res.sendFile(__path + '/docs/403.html')
+        if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/thailand.json`))
+        .then(response => response.json())
+        .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+          data = await fetch(buffer).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/chika.jpg', data)
+        res.sendFile(__path+'/tmp/chika.jpg')
+         })
+         .catch(e => {
+         	console.log(e);
+         	res.sendFile(__path + '/docs/503.html')
+})
+} else {
+  res.sendFile(__path + '/docs/403.html')
+}
+})
+router.get('/cecan/indonesia', async (req, res, next) => {
+          var apikey = req.query.apikey
+       	if(!apikey) return res.sendFile(__path + '/docs/403.html')
+        if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/indonesia.json`))
+        .then(response => response.json())
+        .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+          data = await fetch(buffer).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/chika.jpg', data)
+        res.sendFile(__path+'/tmp/chika.jpg')
+         })
+         .catch(e => {
+         	console.log(e);
+         	res.sendFile(__path + '/docs/503.html')
+})
+} else {
+  res.sendFile(__path + '/docs/403.html')
+}
+})
+router.get('/cecan/korea', async (req, res, next) => {
+          var apikey = req.query.apikey
+       	if(!apikey) return res.sendFile(__path + '/docs/403.html')
+        if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/korea.json`))
+        .then(response => response.json())
+        .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+          data = await fetch(buffer).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/chika.jpg', data)
+        res.sendFile(__path+'/tmp/chika.jpg')
+         })
+         .catch(e => {
+         	console.log(e);
+         	res.sendFile(__path + '/docs/503.html')
+})
+} else {
+  res.sendFile(__path + '/docs/403.html')
+}
+})
+router.get('/cecan/japan', async (req, res, next) => {
+          var apikey = req.query.apikey
+       	if(!apikey) return res.sendFile(__path + '/docs/403.html')
+        if(listkey.includes(apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/japan.json`))
+        .then(response => response.json())
+        .then(async data => {
+        var result = data[Math.floor(Math.random() * data.length)];
+        var buffer = result.url;
+          data = await fetch(buffer).then(v => v.buffer())
+         await fs.writeFileSync(__path +'/tmp/chika.jpg', data)
+        res.sendFile(__path+'/tmp/chika.jpg')
+         })
+         .catch(e => {
+         	console.log(e);
+         	res.sendFile(__path + '/docs/503.html')
+})
+} else {
+  res.sendFile(__path + '/docs/403.html')
+}
+})
 
 router.get('/short/tiny', async (req, res, next) => {
     var apikeyInput = req.query.apikey,
