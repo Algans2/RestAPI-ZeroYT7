@@ -279,7 +279,39 @@ router.get('/changekey', (req, res, next) => {
         res.sendFile(error)
     }
 })
+router.get('/nsfw/ass', async (req, res, next) => {
 
+        var apikeyInput = req.query.apikey
+
+            
+
+	if(!apikeyInput) return res.json(loghandler.notparam)	if(apikeyInput !== `${key}`) return res.sendFile(invalidKey)
+
+       fetch(encodeURI(`https://raku-web.herokuapp.com/api/nsfw/ass?apikey=RakuKeyTod`))
+
+        .then(response => response.json())
+
+        .then(data => {
+
+        var result = data;
+
+             res.json({
+
+             	author: 'KaguraSec',
+
+                 result
+
+             })
+
+         })
+
+         .catch(e => {
+
+         	res.sendFile(error)
+
+})
+
+})
 router.get('/removekey', (req, res, next) => {
     var apikeyInput = req.query.apikey;
 
