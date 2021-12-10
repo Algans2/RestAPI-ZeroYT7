@@ -433,7 +433,37 @@ axios.get('https://jadwalnonton.com/now-playing')
      })
   })
 })
+router.get('/ttlogo', async (req, res, next) => {
 
+        var apikeyInput = req.query.apikey,
+
+	    text1 = req.query.text1;	    text2 = req.query.text2;
+
+try {
+
+  if(!apikeyInput) return res.json(loghandler.notparam)
+
+  if(apikeyInput !== `${key}`) return res.sendFile(invalidKey)
+
+  if (!text1) return res.json(loghandler.nottext)
+
+  if (!text2) return res.json(loghandler.nottext2)
+
+     var hasil = await getBuffer(`https://docs-jojo.herokuapp.com/api/ttlogo?text1=${text1}&text2=${text2}`)
+
+       await fs.writeFileSync(__path + '/tmp/screenshot.png', hasil)
+
+         res.sendFile(__path + '/tmp/screenshot.png')
+
+} catch (e) {
+
+     console.log(e)
+
+	res.sendFile(error)
+
+   }
+
+})
 
 router.get('/short/tiny', async (req, res, next) => {
     var apikeyInput = req.query.apikey,
